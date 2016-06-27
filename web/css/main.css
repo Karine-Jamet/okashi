@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:100);
+h1 {
+  font-size: 50px;
+  font-family: 'Work Sans', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+
+.blog {
+  text-align: center;
+  margin: auto;
+  width: 80vw;
+}
+
+
+.carteDown{
+  color:white;
+}
+
+.mdl-cell {
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  height: 20vw ;
+  padding-left: 8px;
+  padding-top: 4px;
+  color: white;
+}
+
+.blog .mdl-button--accent.mdl-button--accent.mdl-button--raised, .blog  .mdl-button--accent.mdl-button--accent.mdl-button--fab{
+      margin-top: calc(50% - 15px);
+      color: rgba(0, 0, 0, 0.5);
+}
+
+.article{
+  text-align: center;
+  margin: auto;
+  width: 80vw;
+}
+
+.article .block {
+  display: inline-block;
+  width: 25vw;
+  height: 25vw;
+  vertical-align: middle;
+  margin: auto;
+
+}
+
+.block.description {
+  text-align: left;
+}
+
+.media img{
+  width: 20vw;
+}
+
+.article button {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: white;
+  height: 20vh;
+}

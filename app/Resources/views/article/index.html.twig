@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>OKASHI ODOZO</h1>
+<section class="blog mdl-grid" ">
+
+  {% for article in articles %}
+
+  <div class="mdl-cell mdl-cell--3-col" style="background-image:url('{{ article.media }}')">
+
+    <a href="{{ path('_show', { 'id': article.id }) }}">
+      <!-- Accent-colored raised button with ripple -->
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        {{ article.titre }}
+      </button>
+
+    </a>
+
+  </div>
+
+  {% endfor %}
+
+</section>
+
+{% endblock %}

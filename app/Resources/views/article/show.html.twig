@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{ article.titre }}</h1>
+<section class="article">
+<div class="block video">{{ article.video }}</div>
+
+<div class="block description">{{ article.description }}</div>
+
+<div class="block media"><img src="{{ article.media }}"></div>
+
+<a href="{{ path('_index') }}">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Back
+  </button>
+</a>
+</section>
+{% endblock %}
