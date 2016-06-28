@@ -45,6 +45,13 @@ class Article
     /**
      * @var string
      *
+     * @ORM\Column(name="categorie", type="string", length=255)
+     */
+    private $categorie;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -127,5 +134,28 @@ class Article
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set video
+     *
+     * @param string $video
+     * @return Article
+     */
+    public function setVideo($video)
+    {
+        $this->video = $video;
+
+        return $this;
+    }
+
+    /**
+     * Get video
+     *
+     * @return string
+     */
+    public function getVideo()
+    {
+        return $this->video;
     }
 }
