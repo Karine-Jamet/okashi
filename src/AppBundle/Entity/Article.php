@@ -145,7 +145,7 @@ class Article
     /**
      * Get video
      *
-     * @return string 
+     * @return string
      */
     public function getVideo()
     {

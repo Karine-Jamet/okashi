@@ -69,4 +69,31 @@ footer{
   width: 100vw;
   background-color: white;
   height: 20vh;
+  padding: 20px;
+}
+
+footer .block {
+  width: 30vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*footer .presentation p {
+  display: inline-block;
+}*/
+
+footer .presentation img {
+  float: left;
+  width: 80px;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+footer .categories p{
+  display: inline-block;
+}
+
+footer .categories .catTitle{
+  display: block;
+  font-size: 20px;
 }

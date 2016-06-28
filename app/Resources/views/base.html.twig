@@ -15,11 +15,31 @@
 </head>
 
 <body>
+{% block titre }  {% endblock %}
+
   {% block body %}{% endblock %} {% block javascripts %}{% endblock %}
 
   <footer class="footer">
-    <div class="presentation">
+    <div class="block presentation">
+      <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p160x160/11071720_10153293967702974_1340823793367243583_n.jpg?oh=e63eb97ed56b67632038f77763370657&oe=57F770E4">
+      <p>Karine, 30 ans, apprend le cha no yu de l'école Urasenke à Marseille depuis 2015, grâce à l'association "Ken to Cha" et Omi sensei.
+      </p>
+    </div>
+    <div class="block commentaire">
 
+      <!-- <p>Laisser un commentaire</p> -->
+      <textarea placeholder="Laisser un commentaire"></textarea >
+    </div>
+    <div class="block categories">
+
+      <p class="catTitle">Categories</p>
+      <p>Histoire</p>
+      <p>Technique</p>
+      <p>Ustensile</p>
+      <p>recette</p>
+      <p>Evenement</p>
+
+      <input type="text" placeholder="recherche">
     </div>
   </footer>
 
