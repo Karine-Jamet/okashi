@@ -27,8 +27,13 @@
         </div>
         <div class="block commentaire">
 
-              <p class="catTitle">Commentaires</p>
-            <textarea placeholder="Laisser un commentaire"></textarea>
+            <p class="catTitle">Commentaires</p>
+
+              {% block commentaire %}
+                  {{ render(controller('AppBundle:Commentaire:new')) }}
+              {% endblock %}
+
+
         </div>
         <div class="block categories">
 
