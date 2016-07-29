@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>{% block title %}OkashiOdozo: ceremonie du thé {% endblock %}</title>
     {% block stylesheets %}{% endblock %}
-    <!-- <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}" />
     <link rel="stylesheet" href="{{asset('/css/main.css')}}" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -16,7 +16,32 @@
 </head>
 
 <body>
-    {% block titre %}{% endblock %} {% block body %}{% endblock %} {% block javascripts %}{% endblock %}
+  <header>
+    {% block titre %}{% endblock %}
+ <img class="chashaku" src="{{asset('/images/chashaku.jpg')}}" alt="chashaku" />
+ <div class=" categories">
+<a href="{{ path('_index') }}"> <img class="logo" src="{{asset('/images/logo.png')}}" alt="mochi" /></a>
+     <a href="{{path('categories', {'cat':4})}}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+         Histoire
+     </button></a>
+          <a href="{{path('categories', {'cat':0})}}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+         Technique
+     </button></a>
+         <a href="{{path('categories', {'cat':1})}}"> <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+         Ustensile
+     </button></a>
+          <a href="{{path('categories', {'cat':2})}}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+         Recette
+     </button></a>
+         <a href="{{path('categories', {'cat':3})}}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+         Evenement
+     </button></a>
+     <div class="searchBox">
+         <form method="post" action="{{path('search')}}"><input type="search" class="search" name="keyword" placeholder="Recherche..." /><input type="submit"><i class="fa fa-search"></i></form>
+     </div>
+ </div>
+ </header>
+   {% block body %}{% endblock %}
 
     <footer class="footer">
         <div class="block presentation">
@@ -35,32 +60,9 @@
 
 
         </div>
-        <div class="block categories">
 
-            <p class="catTitle">Categories</p>
-            <!-- Flat button with ripple -->
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                Histoire
-            </button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                Technique
-            </button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                Ustensile
-            </button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                Recette
-            </button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                Evenement
-            </button>
-
-            <div class="searchBox">
-                <input type="search" class="search" placeholder="Recherche..." /><i class="fa fa-search"></i>
-            </div>
-        </div>
     </footer>
-
+    {% block javascripts %}{% endblock %}
 </body>
 
 </html>

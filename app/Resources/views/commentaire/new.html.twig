@@ -1,13 +1,15 @@
-{% extends 'base.html.twig' %}
+
 
 {% block commentaire %}
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          Commenter
-        </button>
+      <div class="buttonCom">
+          <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Commenter
+            </button>
+            <a  class="ttCom" href="{{ path('commentaire_index') }}">Voir tout les commentaires</a>
+        </div>
     {{ form_end(form) }}
-
 
 {% endblock %}

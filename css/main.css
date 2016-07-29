@@ -1,38 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:100);
-html{
-  min-height: 100vh;
-}
-body{
-  margin: 0;
-  margin-bottom: 20vh;
-}
 h1 {
     font-size: 50px;
     font-family: 'Work Sans', sans-serif;
     text-align: center;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.7);
 }
-body a {
-    color: darkgreen;
-    text-decoration: none;
-}
-.logo {
-  width: 60px;
-}
-.buttonCom {
-    display: inline-block;
-    vertical-align: middle;
-}
-.ttCom {
-    display: block;
-    padding-top: 15px;
-}
-.chashaku {
-    text-align: center;
-    margin: auto;
-    display: block;
-    transform: translate(0, -15px);
+.chashaku{
+  text-align: center;
+margin: auto;
+display: block;
+transform: translate(0,-15px);
 }
 .blog {
     text-align: center;
@@ -85,6 +62,7 @@ footer {
     position: absolute;
     bottom: 0;
     left: 0;
+    /*width: 100vw;*/
     background-color: white;
     height: 20vh;
     padding: 20px;
@@ -97,13 +75,6 @@ footer .block {
 }
 footer .block.commentaire, footer .block.categories {
     text-align: center;
-}
-footer .block.commentaire {
-    width: 50vw;
-}
-footer #commentaire {
-    width: 30vw;
-    vertical-align: middle;
 }
 footer .presentation img {
     float: left;
@@ -125,48 +96,46 @@ footer textarea {
     width: 20vw;
 }
 footer div {
-    display: inline-block;
+  display: inline-block;
 }
 footer .commentaire #commentaire_name {
-    display: inline-block;
-    width: 9vw;
-    line-height: 25px;
-    font-size: 15px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding-left: 10px;
+  display:inline-block;
+  width: 9vw;
+  line-height: 25px;
+  font-size: 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
 }
+
 footer .commentaire #commentaire_email {
-    display: inline-block;
-    width: 9vw;
-    line-height: 25px;
-    font-size: 15px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding-left: 10px;
+  display:inline-block;
+  width: 9vw;
+  line-height: 25px;
+  font-size: 15px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
 }
-footer .commentaire #commentaire_comment {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 18vw;
-    line-height: 25px;
-    font-size: 15px;
+
+footer .commentaire #commentaire_comment{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 18vw;
+  line-height: 25px;
+  font-size: 15px;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding-left: 10px;
     padding-right: 10px;
 }
-header .categories {
-    text-align: center;
-    padding: 15px;
+footer .searchBox {
+  display: block;
 }
-header .searchBox {
-    display: inline-block;
-    vertical-align: middle;
-}
-header .search {
+
+footer .search {
     line-height: 25px;
     font-size: 15px;
     border-top-left-radius: 20px;
@@ -175,10 +144,10 @@ header .search {
     padding-left: 10px;
     width: 10vw;
 }
-header .search:focus, footer #commentaire_email, footer #commentaire_name {
+footer .search:focus, footer #commentaire_email, footer #commentaire_name {
     outline: none;
 }
-header .fa {
+footer .fa {
     line-height: 29px;
     font-size: 15px;
     border-top-right-radius: 20px;
@@ -189,36 +158,9 @@ header .fa {
     background-color: rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
-header .fa:hover {
+footer .fa:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.4);
     color: rgb(178, 255, 89);
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-/*----------Commentaire ------------------*/
-.commentaireShow{
-  text-align: center;
-}
-
-.commentaireShow .blockCom{
-  display: inline-block;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  margin: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  min-width: 20vw;
-}
-
-.commentaireShow .name{
-  font-style: italic;
-  text-align: right;
-  font-size: 12px;
-}
-
-.commentaireShow .fa {
-  color:rgba(0, 0, 0, 0.5);
-  margin-left: 16px;
-  margin-right: 16px;
 }

@@ -1,43 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block titre %}<h1>COMMENTAIRES</h1>{% endblock %}
+
 {% block body %}
-    <h1>Commentaire list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Comment</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<section class="commentaireShow">
         {% for commentaire in commentaires %}
-            <tr>
-                <td><a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">{{ commentaire.id }}</a></td>
-                <td>{{ commentaire.name }}</td>
-                <td>{{ commentaire.email }}</td>
-                <td>{{ commentaire.comment }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('commentaire_show', { 'id': commentaire.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('commentaire_edit', { 'id': commentaire.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+              <div class="blockCom">
+                      <p class="comment"><i class="fa fa-quote-left" aria-hidden="true"></i>
+{{ commentaire.comment }} <i class="fa fa-quote-right" aria-hidden="true"></i>
+</p>
+                      <p class="name"> {{ commentaire.name }}</p>
+                </div>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('commentaire_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+</section>
 {% endblock %}

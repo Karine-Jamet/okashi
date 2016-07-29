@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Commentaire;
+use AppBundle\Entity\Article;
 use AppBundle\Form\CommentaireType;
 
 /**
@@ -19,15 +20,15 @@ class CommentaireController extends Controller
     /**
      * Lists all Commentaire entities.
      *
-     * @Route("/commentaire", name="commentaire_index")
+     * @Route("/commentaires", name="commentaire_index")
      * @Method("GET")
      */
     public function indexAction()
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $commentaires = $em->getRepository('AppBundle:Commentaire')->findAll();
-
         return $this->render('commentaire/index.html.twig', array(
             'commentaires' => $commentaires,
         ));

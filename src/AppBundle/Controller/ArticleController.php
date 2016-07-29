@@ -62,7 +62,7 @@ class ArticleController extends Controller
     /**
      * Finds and displays a Article entity.
      *
-     * @Route("/{id}", name="_show")
+     * @Route("/article/{id}", name="_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
@@ -78,7 +78,7 @@ class ArticleController extends Controller
     /**
      * Displays a form to edit an existing Article entity.
      *
-     * @Route("/{id}/edit", name="_edit")
+     * @Route("/article/{id}/edit", name="_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Article $article)
@@ -105,7 +105,7 @@ class ArticleController extends Controller
     /**
      * Deletes a Article entity.
      *
-     * @Route("/{id}", name="_delete")
+     * @Route("/article/{id}/delete", name="_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Article $article)
@@ -137,4 +137,49 @@ class ArticleController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * Find article by categories
+     *
+     * @Route("/categories/{cat}", name="categories")
+     * @Method("GET")
+     */
+    public function findCat($cat)
+    {
+      $em = $this->getDoctrine()->getManager();
+
+      $articles = $em->getRepository('AppBundle:Article')->findByCategorie($cat);
+
+      return $this->render('article/index.html.twig', array(
+          'articles' => $articles,
+      ));
+    }
+
+
+    /**
+     * Find article by categories
+     *
+     * @Route("/search", name="search")
+     * @Method("post")
+     */
+    public function searchBox(Request $request)
+    {
+      $keyword = "%".$request->get('keyword')."%";
+
+      $em = $this->getDoctrine()->getManager();
+      $qb = $em->getRepository('AppBundle:Article')->createQueryBuilder('a');
+      $qb->select('a')
+         ->where('a.description LIKE :keyword ')
+          ->setParameter('keyword', $keyword);
+         $query = $qb->getQuery();
+     $articles = $query->getResult();
+     dump($query->getParameters());
+
+ //------- Gerer si recherche nul --------------//
+
+      return $this->render('article/index.html.twig', array(
+          'articles' => $articles,
+      ));
+    }
+
 }
