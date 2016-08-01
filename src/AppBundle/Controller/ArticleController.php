@@ -26,10 +26,47 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('AppBundle:Article')->findAll();
+        $articles = $em->getRepository('AppBundle:Article')->findBy(array(),array(),4,0);
+        $prev = $em->getRepository('AppBundle:Article')->findBy(array(),array(),1,4);
+
+         if(empty($prev) ){
+           $isPrev = false;
+         }else{
+           $isPrev = true;
+         }
 
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
+            'page' =>0,
+            'isPrev' =>$isPrev,
+        ));
+    }
+
+    /**
+     * Lists all Article entities.
+     *
+     * @Route("/page/{id}", name="page")
+     * @Method("GET")
+     */
+    public function pageAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $start = ($id*4)-1;
+
+        $articles = $em->getRepository('AppBundle:Article')->findBy(array(),array(),4,$start);
+        $prev = $em->getRepository('AppBundle:Article')->findBy(array(),array(),1,$start+4);
+
+        if(empty($prev) ){
+          $isPrev = false;
+        }else{
+          $isPrev = true;
+        }
+
+        return $this->render('article/index.html.twig', array(
+            'articles' => $articles,
+            'page' =>$id,
+            'isPrev' =>$isPrev,
         ));
     }
 
@@ -150,8 +187,14 @@ class ArticleController extends Controller
 
       $articles = $em->getRepository('AppBundle:Article')->findByCategorie($cat);
 
+        $message = "Cette catégorie est vide.";
+
+
       return $this->render('article/index.html.twig', array(
           'articles' => $articles,
+          'page' =>0,
+          'isPrev' =>false,
+          'message' => $message,
       ));
     }
 
@@ -165,7 +208,7 @@ class ArticleController extends Controller
     public function searchBox(Request $request)
     {
       $keyword = "%".$request->get('keyword')."%";
-
+      $keywordToPrint = $request->get('keyword');
       $em = $this->getDoctrine()->getManager();
       $qb = $em->getRepository('AppBundle:Article')->createQueryBuilder('a');
       $qb->select('a')
@@ -173,12 +216,16 @@ class ArticleController extends Controller
           ->setParameter('keyword', $keyword);
          $query = $qb->getQuery();
      $articles = $query->getResult();
-     dump($query->getParameters());
 
- //------- Gerer si recherche nul --------------//
+      $message = "Aucun resultat pour ".$keywordToPrint;
+
 
       return $this->render('article/index.html.twig', array(
           'articles' => $articles,
+          'page' =>0,
+          'isPrev' =>false,
+          'message' => $message,
+
       ));
     }
 

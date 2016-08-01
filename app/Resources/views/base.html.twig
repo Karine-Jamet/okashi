@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>{% block title %}OkashiOdozo: ceremonie du thé {% endblock %}</title>
     {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}" />
+    <link rel="shortcut icon"  href="{{ asset('/images/favicon.png') }}">
     <link rel="stylesheet" href="{{asset('/css/main.css')}}" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -37,7 +37,9 @@
          Evenement
      </button></a>
      <div class="searchBox">
-         <form method="post" action="{{path('search')}}"><input type="search" class="search" name="keyword" placeholder="Recherche..." /><input type="submit"><i class="fa fa-search"></i></form>
+         <form method="post" action="{{path('search')}}">
+           <input type="search" class="search" name="keyword" placeholder="Recherche..." />
+           <input type="submit" id="submitSearch" ><label for="submitSearch"><i class="fa fa-search"></i></label></form>
      </div>
  </div>
  </header>

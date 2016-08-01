@@ -1,10 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:100);
-html{
-  min-height: 100vh;
+html {
+    min-height: 100vh;
 }
-body{
-  margin: 0;
-  margin-bottom: 20vh;
+body {
+    margin: 0;
+    margin-bottom: 20vh;
 }
 h1 {
     font-size: 50px;
@@ -18,7 +18,7 @@ body a {
     text-decoration: none;
 }
 .logo {
-  width: 60px;
+    width: 60px;
 }
 .buttonCom {
     display: inline-block;
@@ -35,10 +35,24 @@ body a {
     transform: translate(0, -15px);
 }
 .blog {
+  position :relative;
     text-align: center;
     margin: auto;
     width: 65vw;
 }
+
+.blog .fa {
+  position:absolute;
+  top:50%;
+  font-size: 60px;
+  transform: translate(0,-50%);
+  color : darkgreen;
+}
+
+.blog .fa-chevron-left{
+  left:-30px;
+}
+
 .carteDown {
     color: white;
 }
@@ -162,6 +176,9 @@ header .categories {
     text-align: center;
     padding: 15px;
 }
+#submitSearch {
+    display: none;
+}
 header .searchBox {
     display: inline-block;
     vertical-align: middle;
@@ -188,6 +205,7 @@ header .fa {
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+    transform: translate(-4px);
 }
 header .fa:hover {
     cursor: pointer;
@@ -196,29 +214,26 @@ header .fa:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 /*----------Commentaire ------------------*/
-.commentaireShow{
-  text-align: center;
-}
 
-.commentaireShow .blockCom{
-  display: inline-block;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  margin: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  min-width: 20vw;
+.commentaireShow {
+    text-align: center;
 }
-
-.commentaireShow .name{
-  font-style: italic;
-  text-align: right;
-  font-size: 12px;
+.commentaireShow .blockCom {
+    display: inline-block;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 20vw;
 }
-
+.commentaireShow .name {
+    font-style: italic;
+    text-align: right;
+    font-size: 12px;
+}
 .commentaireShow .fa {
-  color:rgba(0, 0, 0, 0.5);
-  margin-left: 16px;
-  margin-right: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 16px;
+    margin-right: 16px;
 }

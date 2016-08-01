@@ -5,6 +5,13 @@
 {% block body %}
 
 <section class="blog mdl-grid" ">
+  {% if isPrev %}
+    <a href="{{path('page',{'id':page+1})}}"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+  {% endif %}
+
+  {% if articles|length == 0 %}
+  <h3>{{message}}</h3>
+  {% endif %}
 
   {% for article in articles %}
 
@@ -21,7 +28,12 @@
   </div>
 
   {% endfor %}
-
+  {% if page>0 %}
+    <a href="{{path('page',{'id':page-1})}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if page==1 %}
+    <a href="{{path('_index')}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+  {% endif %}
 </section>
 
 {% endblock %}
