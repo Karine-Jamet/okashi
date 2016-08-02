@@ -26,7 +26,7 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('AppBundle:Article')->findBy(array(),array(),4,0);
+        $articles = $em->getRepository('AppBundle:Article')->findBy(array(),array('id' => 'desc'),4,0);
         $prev = $em->getRepository('AppBundle:Article')->findBy(array(),array(),1,4);
 
          if(empty($prev) ){
@@ -52,9 +52,9 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $start = ($id*4)-1;
+        $start = ($id*4);
 
-        $articles = $em->getRepository('AppBundle:Article')->findBy(array(),array(),4,$start);
+        $articles = $em->getRepository('AppBundle:Article')->findBy(array(),array('id' => 'desc'),4,$start);
         $prev = $em->getRepository('AppBundle:Article')->findBy(array(),array(),1,$start+4);
 
         if(empty($prev) ){
